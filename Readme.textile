@@ -1,0 +1,53 @@
+h1. BlockchainDB
+
+BlockchainDB is a way to store your data securely and permanently on Bitcoin's blockchain using the best tools available at the moment
+
+- Bitcore library - JS, can integrate with anything.
+- Bitcoin Core pruned server - fast, light, and the most stable solution available!
+
+It starts with a simple UI tool but the project aims to build a library for every programming language to interface with the blockchain as an append-only database.
+
+h3. UI tool
+
+react.rb whohoo
+
+single page app:
+
+
+    field to write
+
+      > ok > link to blockchain explorer
+
+      > no > top up address
+
+
+    address w refreshing balance
+
+
+h3. Internals:
+
+
+bitcoin latest (0.11) docker container with pruning
+
+
+---
+
+connect to a pruned bitcoin core 0.11 wallet ( blockchain will be 3GB by default - so the whole package will be < 5GB )
+
+
+todo:
+
+generate keys with bitcore
+
+store them somewhere
+
+
+
+methods to use
+
+createrawtransaction [{"txid":"id","vout":n},...] {"address":amount,...}
+decoderawtransaction "hexstring"
+decodescript "hex"
+getrawtransaction "txid" ( verbose )
+sendrawtransaction "hexstring" ( allowhighfees )
+signrawtransaction "hexstring" ( [{"txid":"id","vout":n,"scriptPubKey":"hex","redeemScript":"hex"},...] ["privatekey1",...] sighashtype )
